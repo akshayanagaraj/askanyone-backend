@@ -1,0 +1,9 @@
+SELECT *
+from v1.comments
+where question_id={{question_id}}
+ORDER BY commented_at desc
+LIMIT 
+    {{per_page|sqlsafe}} 
+{% if offset %} 
+OFFSET {{offset|sqlsafe}} 
+{% endif %}
