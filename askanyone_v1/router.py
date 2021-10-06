@@ -31,3 +31,18 @@ askanyone_v1.add_url_rule(
     methods= ['GET']
 )
 
+askanyone_v1.add_url_rule(
+    rule='/create_question',
+    endpoint='create_question',
+    view_func=create_question,
+    methods= ['POST']
+)
+
+askanyone_v1.add_url_rule(
+    rule='/create_comment',
+    endpoint='create_comment',
+    view_func=create_comment,
+    methods= ['POST']
+)
+
+

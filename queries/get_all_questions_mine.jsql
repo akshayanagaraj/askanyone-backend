@@ -1,6 +1,9 @@
-SELECT *
-FROM v1.questions
-WHERE user_id = {{user_id}}
+SELECT *, user_name
+FROM v1.questions,
+v1.users
+WHERE questions.user_id = {{user_id}} and
+        users.user_id = {{user_id}}
+
 ORDER BY created_at desc
 LIMIT 
     {{per_page|sqlsafe}} 
